@@ -11,7 +11,7 @@ function chageMenu(title, href) {
 function MainPage() {
   const keyword = "당근";
   axios
-    .get(`http://localhost:7071/api/recipe/${keyword}`, {
+    .get(`api/recipe/${keyword}`, {
       responseType: "json",
     })
     .then((res) => {
@@ -26,18 +26,18 @@ function MainPage() {
   return (
     <div className="top-block">
       <div className="background main-background">
-        <div className="dark-background">
-          <div style={{ paddingTop: "20vh" }}>
+        <div className="dark-background" style={{ flexDirection: "column" }}>
+          <div className="item-flex-box" style={{ paddingTop: "20vh" }}>
             <p className="h3 h1">내손안에</p>
             <p className="h1">냉장고</p>
-            <p className="h4">
+            <p className="h4 item-flex-box">
               오늘 저녁은 <br />
               <b>집밥</b>
               <br /> 어떠세요?
             </p>
             <button
-              className="green-button"
-              style={{ marginTop: "15vh" }}
+              className="green-button item-flex-box"
+              style={{ marginBottom: "5vh" }}
               onClick={() => {
                 window.location.href = "/saveEnv";
               }}
