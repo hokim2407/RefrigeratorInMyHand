@@ -25,7 +25,7 @@ function CheckMine() {
             <div
               className="button-image"
               style={{
-                backgroundImage: 'url("./basil.jpg")',
+                backgroundImage: 'url("./buttonImage/basil.jpg")',
               }}
             >
               <div
@@ -55,7 +55,7 @@ function CheckMine() {
             <div
               className="button-image"
               style={{
-                backgroundImage: 'url("./spaghetti.jpg")',
+                backgroundImage: 'url("./buttonImage/spaghetti.jpg")',
               }}
             >
               <div
@@ -85,7 +85,7 @@ function CheckMine() {
             <div
               className="button-image"
               style={{
-                backgroundImage: 'url("./ice-cream.jpg")',
+                backgroundImage: 'url("./buttonImage/ice-cream.jpg")',
               }}
             >
               <div
