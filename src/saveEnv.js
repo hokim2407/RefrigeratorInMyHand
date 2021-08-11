@@ -5,7 +5,10 @@ function SaveEnv() {
   return (
     <div className="top-block">
       <div className="env-background background">
-        <div className="dark-background item-middle-box">
+        <div
+          className="dark-background item-middle-box"
+          style={{ justifyContent: "flex-end" }}
+        >
           <div
             style={{
               bottom: "7vh",
@@ -39,7 +42,7 @@ function SaveEnv() {
           <button
             className="green-button"
             onClick={() => {
-              window.location.href = "/saveEnv";
+              window.location.href = "/checkMine";
             }}
           >
             NAXT
