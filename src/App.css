@@ -119,11 +119,17 @@ li {
   min-width: 280px;
   max-width: 1080px;
   object-fit: none;
+  height: 100%;
+}
+
+.dark-background {
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 100%;
+  width: 100%;
 }
 
 .main-background {
   background-image: url("./background/main-blur.jpg");
-  height: 100%;
 }
 
 .env-background {
@@ -188,12 +194,6 @@ div.margin-textbox {
   font-size: min(4vw, 2rem);
   min-width: 80px;
   filter: none;
-}
-
-.dark-background {
-  background-color: rgba(0, 0, 0, 0.2);
-  height: 100%;
-  width: 100%;
 }
 
 .green-button {
@@ -265,4 +265,8 @@ div.margin-textbox {
   vertical-align: center;
   align-items: center;
   justify-content: center;
+}
+
+.item-flex-box {
+  flex: 1;
 }
