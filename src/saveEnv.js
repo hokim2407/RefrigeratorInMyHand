@@ -8,8 +8,8 @@ function SaveEnv() {
         <div className="dark-background item-middle-box">
           <div
             style={{
-              padding: "min(3%,30px)",
-              marginBottom: "10rem",
+              bottom: "7vh",
+              position: "relative",
               marginRight: "5%",
             }}
           >
