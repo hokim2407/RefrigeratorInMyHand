@@ -8,6 +8,10 @@ body {
   height: 100%;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
 p {
   font-family: "LotteMartDream";
   margin: 2rem;
