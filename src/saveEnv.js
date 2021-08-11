@@ -3,7 +3,7 @@ import "./App.css";
 
 function SaveEnv() {
   return (
-    <section className="middle">
+    <div className="top-block">
       <div className="env-background background">
         <div className="dark-background item-middle-box">
           <div
@@ -46,7 +46,7 @@ function SaveEnv() {
           </button>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

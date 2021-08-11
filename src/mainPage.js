@@ -3,10 +3,10 @@ import "./App.css";
 
 function MainPage() {
   return (
-    <section className="middle">
-      <div className="background main-background ">
+    <div className="top-block">
+      <div className="background main-background">
         <div className="dark-background">
-          <div style={{ padding: "20vh" }}>
+          <div style={{ padding: "5vh", paddingTop: "20vh" }}>
             <p className="uppertitle title">내손안에</p>
             <p className="title">냉장고</p>
             <p className="recommand">
@@ -24,7 +24,7 @@ function MainPage() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
