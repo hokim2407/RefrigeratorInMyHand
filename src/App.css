@@ -35,6 +35,7 @@ body {
     url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff")
       format("woff");
 }
+
 @font-face {
   font-family: "LotteMartDreamBold";
   font-style: normal;
@@ -44,6 +45,7 @@ body {
     url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff")
       format("woff");
 }
+
 @font-face {
   font-family: "LotteMartDreamLight";
   font-style: normal;
@@ -53,6 +55,7 @@ body {
     url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff")
       format("woff");
 }
+
 .lottemartdream * {
   font-family: "LotteMartDream", sans-serif;
 }
@@ -121,26 +124,42 @@ div.margin-textbox {
   padding-top: 20vh;
 }
 
-.title.uppertitle {
-  font-size: min(4.5vw, 4rem, 35pt);
+.h1 {
+  font-family: "LotteMartDreamBold";
+  min-width: 220px;
+  font-size: min(10vw, 78pt);
+  max-width: 100%;
+  color: white;
+}
+
+.h2 {
+  font-family: "LotteMartDreamBold";
+  min-width: 180px;
+  font-size: min(6vw, 5rem, 36pt);
+  max-width: 100%;
+  color: white;
+}
+
+.h3 {
+  font-size: min(4.5vw, 4rem, 28pt);
   color: white;
   min-width: 125px;
   filter: none;
 }
 
-.title {
-  font-family: "LotteMartDreamBold";
-  min-width: 220px;
-  font-size: min(10vw, 9rem);
-  max-width: 100%;
-  color: white;
-}
-
-.recommand {
+.h4 {
   font-family: "LotteMartDreamLight";
   margin-top: 15vh;
   font-size: min(4vw, 2rem);
   color: white;
+  min-width: 220px;
+  filter: none;
+}
+
+.p1 {
+  margin: 7vh 0;
+  font-family: "LotteMartDreamLight";
+  font-size: min(4vw, 2rem);
   min-width: 220px;
   filter: none;
 }

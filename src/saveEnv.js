@@ -10,17 +10,17 @@ function SaveEnv() {
             style={{
               padding: "min(3%,30px)",
               marginBottom: "10rem",
-              marginRight: "5rem",
+              marginRight: "5%",
             }}
           >
-            <p className="uppertitle title">
+            <p className="h2">
               환경과 냉장고 <br />
               무슨 관련이 있을까요?
             </p>
           </div>
         </div>
         <div className="white-box">
-          <p style={{ margin: "5rem" }}>
+          <p className="p1">
             낮은 온도에서 보관하면 상태가 오히려 <br />
             나빠지는 식재료가 있습니다. <br />
             냉장고에 지나치게 오래 보관하다가 <br />
