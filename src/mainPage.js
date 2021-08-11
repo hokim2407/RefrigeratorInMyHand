@@ -11,7 +11,7 @@ function chageMenu(title, href) {
 function MainPage() {
   const keyword = "당근";
   axios
-    .get(`http://localhost:7071/api/recipe/${keyword}`, {
+    .get(`api/recipe/${keyword}`, {
       responseType: "json",
     })
     .then((res) => {
