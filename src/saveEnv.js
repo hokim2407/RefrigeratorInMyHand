@@ -40,6 +40,7 @@ function SaveEnv() {
             에너지입니다.
           </p>
           <button
+            style={{ marginBottom: "3vh" }}
             className="green-button"
             onClick={() => {
               window.location.href = "/checkMine";

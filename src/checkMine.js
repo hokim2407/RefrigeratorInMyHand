@@ -40,7 +40,7 @@ function CheckMine() {
                     window.location.href = "/checkMine";
                   }}
                 >
-                  <p className="hb3 button-text">상온</p>
+                  <p className="h2 button-text">상온</p>
                   <img
                     className="button-icon"
                     src="./icon/imo-good.png"
@@ -70,7 +70,7 @@ function CheckMine() {
                     window.location.href = "/checkMine";
                   }}
                 >
-                  <p className="hb3 button-text">냉장</p>
+                  <p className="h2 button-text">냉장</p>
                   <img
                     className="button-icon"
                     src="./icon/imo-good.png"
@@ -100,7 +100,7 @@ function CheckMine() {
                     window.location.href = "/checkMine";
                   }}
                 >
-                  <p className="hb3 button-text">냉동</p>
+                  <p className="h2 button-text">냉동</p>
                   <img
                     className="button-icon"
                     src="./icon/imo-good.png"
