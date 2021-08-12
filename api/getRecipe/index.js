@@ -19,13 +19,16 @@ module.exports = async function (context, req) {
       .children("li.common_sp_list_li");
     var title;
     var href;
+    var target = Math.floor(Math.random() * li.length);
     li.each(function (i, elem) {
       title = $(this).find("div.common_sp_caption_tit").text();
       href =
         "https://www.10000recipe.com" +
         $(this).find("a.common_sp_link").attr("href");
-      if (i === 0) return false;
+      if (i === target) return false;
     });
+    if (title.includes("만들"))
+      title = title.substring(0, title.indexOf("만들"));
     context.res.status(200).json({ success: "ok", title, href });
   } catch (e) {
     console.log(e);
