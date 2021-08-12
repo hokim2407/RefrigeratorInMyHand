@@ -40,21 +40,20 @@ function MainPage() {
   return (
     <div className="top-block">
       <div className="background main-background">
-        <div
-          className="dark-background"
-          style={{ flexDirection: "column", minHeight: "100vh" }}
-        >
+        <div className="dark-background vertical-flex-box">
           <div className="item-flex-box" style={{ paddingTop: "20vh" }}>
             <p className="h3 h1">내손안에</p>
             <p className="h1">냉장고</p>
-            <p className="h4 item-flex-box">
-              오늘 저녁은 <br />
-              <b>...</b>
-              <br /> 어떠세요?
-            </p>
+          </div>
+          <p className="h4 item-flex-box">
+            오늘 저녁은 <br />
+            <b>...</b>
+            <br /> 어떠세요?
+          </p>
+          <div className="item-flex-box">
             <button
-              className="green-button item-flex-box"
-              style={{ marginBottom: "5vh" }}
+              className="green-button"
+              style={{ margin: "5vh 0" }}
               onClick={() => {
                 window.location.href = "/saveEnv";
               }}

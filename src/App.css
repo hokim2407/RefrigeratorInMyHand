@@ -177,7 +177,7 @@ div.margin-textbox {
 
 .h4 {
   font-family: "LotteMartDreamLight";
-  margin-top: 15vh;
+
   font-size: min(4vw, 2rem);
   color: white;
   min-width: 120px;
@@ -272,4 +272,11 @@ div.margin-textbox {
 
 .item-flex-box {
   flex: 1;
+}
+
+.vertical-flex-box {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  min-height: 100vh;
 }
