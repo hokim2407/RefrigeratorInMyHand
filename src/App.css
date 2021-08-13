@@ -194,7 +194,7 @@ div.margin-textbox {
 .pb1 {
   margin: 7vh 0;
   font-family: "LotteMartDreamBold";
-  font-size: min(5vw, 2.5rem);
+  font-size: min(6vw, 5rem, 36pt);
   min-width: 80px;
   filter: none;
 }
@@ -210,6 +210,27 @@ div.margin-textbox {
   outline: none;
   background: #67ba43;
   border-radius: 0.5rem;
+}
+
+.white-border-button {
+  font-family: "LotteMartDream";
+  font-size: min(3.5vw, 2rem);
+  color: white;
+  width: min(50vw, 15rem);
+  padding: 1rem;
+  filter: none;
+  border: 5px solid white;
+  outline: none;
+  background: transparent;
+  border-radius: 0.5rem;
+}
+
+.button-click {
+  filter: brightness(0.75);
+}
+
+.button-image.button-click {
+  filter: brightness(0.75);
 }
 
 .image-button {
