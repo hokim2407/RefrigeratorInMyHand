@@ -1,7 +1,9 @@
 import React from "react";
 import "./App.css";
+import addButtonEnterEvent from "./ButtonEnter";
 
 function SaveEnv() {
+  addButtonEnterEvent();
   return (
     <div className="top-block">
       <div className="env-background background">

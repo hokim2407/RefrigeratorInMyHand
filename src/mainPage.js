@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import axios from "axios";
+import addButtonEnterEvent from "./ButtonEnter";
 
 function chageMenu(title, href) {
   const text = document.getElementsByClassName("h4")[0];
@@ -37,10 +38,12 @@ function MainPage() {
         );
       } else chageMenu(null, null);
     });
+
+  addButtonEnterEvent();
+
   return (
     <div className="top-block">
       <div className="background main-background">
-
         <div
           className="main-dark-background"
           style={{ flexDirection: "column" }}

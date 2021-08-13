@@ -212,10 +212,6 @@ div.margin-textbox {
   border-radius: 0.5rem;
 }
 
-.green-button:hover {
-  filter: brightness(0.75);
-}
-
 .white-border-button {
   font-family: "LotteMartDream";
   font-size: min(3.5vw, 2rem);
@@ -228,7 +224,12 @@ div.margin-textbox {
   background: transparent;
   border-radius: 0.5rem;
 }
-.white-border-button:hover {
+
+.button-click {
+  filter: brightness(0.75);
+}
+
+.button-image.button-click {
   filter: brightness(0.75);
 }
 
@@ -261,10 +262,6 @@ div.margin-textbox {
   background-size: cover;
   background-position: center;
   border-radius: 2rem;
-}
-
-.button-image:hover {
-  filter: brightness(0.75);
 }
 
 .button-text {

@@ -1,5 +1,6 @@
 import React from "react";
 import "./fillPage.css";
+import addButtonEnterEvent from "./ButtonEnter";
 
 var savedItem = window.localStorage.getItem("refrigerator");
 savedItem = savedItem ? JSON.parse(savedItem) : {};
@@ -13,6 +14,7 @@ function FillPage() {
     const name = document.getElementById("name").value;
     if (!name) {
       alert("식품 이름을 입력해주세요");
+
       return;
     }
 
@@ -33,17 +35,20 @@ function FillPage() {
     });
     savedItem[keyCount++] = { name, date, type };
     window.localStorage.setItem("refrigerator", JSON.stringify(savedItem));
+    document.getElementById("name").focus();
   };
 
   const removeItem = (key) => {
     if (!savedItem[key]) {
       console.error(`${key} is not exist`);
+      document.getElementById("name").focus();
       return;
     }
     if (window.confirm(`[${savedItem[key]?.name}] 식품을 삭제하시겠습니까?`)) {
       delete savedItem[key];
       window.localStorage.setItem("refrigerator", JSON.stringify(savedItem));
       document.getElementById(`li-${key}`)?.remove();
+      document.getElementById("name").focus();
     }
   };
 
@@ -65,6 +70,8 @@ function FillPage() {
     }
   });
 
+  addButtonEnterEvent();
+
   return (
     <div className="top-block">
       <div className="background fill-background">
@@ -84,7 +91,13 @@ function FillPage() {
             <li>
               <input
                 id="date"
-                type="date"
+                type="text"
+                onFocus={(e) => {
+                  e.target.type = "date";
+                }}
+                onBlur={(e) => {
+                  e.target.type = "text";
+                }}
                 placeholder="유통기한을 입력해주세요"
               />
             </li>
