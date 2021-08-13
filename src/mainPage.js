@@ -11,6 +11,8 @@ function getKeyword() {
   for (var key in savedItem) {
     savedItemArray.push(savedItem[key]);
   }
+  if (savedItemArray.length === 0) return "";
+
   savedItemArray.sort(function (a, b) {
     if (a.date == null || a.date === "") return 1;
     if (b.date == null || b.date === "") return -1;
