@@ -3,6 +3,24 @@ import "./App.css";
 import axios from "axios";
 import addButtonEnterEvent from "./ButtonEnter";
 
+function getKeyword() {
+  var savedItem = window.localStorage.getItem("refrigerator");
+  savedItem = savedItem ? JSON.parse(savedItem) : {};
+  const savedItemArray = [];
+
+  for (var key in savedItem) {
+    savedItemArray.push(savedItem[key]);
+  }
+  savedItemArray.sort(function (a, b) {
+    if (a.date == null || a.date === "") return 1;
+    if (b.date == null || b.date === "") return -1;
+    if (a.date > b.date) return 1;
+    if (a.date < b.date) return -1;
+    return 0;
+  });
+  return savedItemArray[0].name;
+}
+
 function chageMenu(title, href) {
   const text = document.getElementsByClassName("h4")[0];
   if (!title) {
@@ -15,7 +33,7 @@ function chageMenu(title, href) {
 }
 
 function MainPage() {
-  const keyword = "계란";
+  const keyword = getKeyword();
   axios
     .get(`api/recipe/${keyword}`, {
       responseType: "json",

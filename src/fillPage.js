@@ -2,13 +2,12 @@ import React from "react";
 import "./fillPage.css";
 import addButtonEnterEvent from "./ButtonEnter";
 
-var savedItem = window.localStorage.getItem("refrigerator");
-savedItem = savedItem ? JSON.parse(savedItem) : {};
-var keyCount =
-  parseInt(Object.keys(savedItem)[Object.keys(savedItem).length - 1]) + 1;
-keyCount = isNaN(keyCount) ? 0 : keyCount;
-
 function FillPage() {
+  var savedItem = window.localStorage.getItem("refrigerator");
+  savedItem = savedItem ? JSON.parse(savedItem) : {};
+  var keyCount =
+    parseInt(Object.keys(savedItem)[Object.keys(savedItem).length - 1]) + 1;
+  keyCount = isNaN(keyCount) ? 0 : keyCount;
   var itemList;
   const addItem = () => {
     const name = document.getElementById("name").value;
