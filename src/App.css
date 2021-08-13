@@ -194,7 +194,7 @@ div.margin-textbox {
 .pb1 {
   margin: 7vh 0;
   font-family: "LotteMartDreamBold";
-  font-size: min(5vw, 2.5rem);
+  font-size: min(6vw, 5rem, 36pt);
   min-width: 80px;
   filter: none;
 }
