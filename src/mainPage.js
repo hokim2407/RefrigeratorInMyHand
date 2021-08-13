@@ -26,7 +26,10 @@ function MainPage() {
   return (
     <div className="top-block">
       <div className="background main-background">
-        <div className="dark-background" style={{ flexDirection: "column" }}>
+        <div
+          className="main-dark-background"
+          style={{ flexDirection: "column" }}
+        >
           <div className="item-flex-box" style={{ paddingTop: "20vh" }}>
             <p className="h3 h1">내손안에</p>
             <p className="h1">냉장고</p>

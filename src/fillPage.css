@@ -1,0 +1,59 @@
+input,
+select {
+  box-sizing: border-box;
+
+  margin: 0;
+  font-family: "LotteMartDream";
+  width: 50%;
+  min-width: 250px;
+  height: 5rem;
+  padding: min(9vw, 2rem, 12pt);
+  padding-left: min(10vw, 3rem, 16pt);
+  line-height: 1.5;
+  font-size: min(4vw, 3.5rem, 24pt);
+  word-break: keep-all;
+  color: white;
+  vertical-align: baseline;
+  background-color: #00000075;
+  border: none;
+  outline: none;
+  border-radius: min(8vw, 1rem, 8pt);
+}
+
+ul {
+  padding: 0;
+  max-width: 1080px;
+  list-style: none;
+}
+li {
+  margin: 2rem 2rem 0 2rem;
+  padding: 0;
+}
+
+.fill-background {
+  background-image: url("./background/tangerines.jpg");
+  min-height: 100vh;
+}
+
+.button-margin {
+  margin: 5vh;
+}
+
+.list-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "LotteMartDream";
+  color: white;
+  font-size: min(3vw, 2rem);
+}
+
+li.list {
+  display: flex;
+  margin: 0;
+  margin-bottom: 10px;
+  height: min(6vw, 5rem);
+  padding: 5px 50px;
+  background-color: #00000075;
+  justify-content: space-between;
+}
