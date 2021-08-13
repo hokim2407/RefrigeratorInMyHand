@@ -5,7 +5,7 @@ var savedItem = window.localStorage.getItem("refrigerator");
 savedItem = savedItem ? JSON.parse(savedItem) : {};
 var keyCount =
   parseInt(Object.keys(savedItem)[Object.keys(savedItem).length - 1]) + 1;
-console.log(keyCount);
+keyCount = isNaN(keyCount) ? 0 : keyCount;
 
 function FillPage() {
   var itemList;
