@@ -18,7 +18,7 @@ function Result() {
   var checkType = window.location.href.substr(
     window.location.href.lastIndexOf('=') + 1
   );
-
+ var Type = "상온";
   if (checkType === 0)
     Type = "상온";
   else if (checkType === 1)
