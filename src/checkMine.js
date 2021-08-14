@@ -65,7 +65,7 @@ function CheckMine() {
                 <button
                   className="image-button"
                   onClick={() => {
-                    window.location.href = "/fill";
+                    window.location.href = "/result?index="+0;
                   }}
                 >
                   <p className="h2 button-text">상온</p>
@@ -95,7 +95,7 @@ function CheckMine() {
                 <button
                   className="image-button"
                   onClick={() => {
-                    window.location.href = "/checkMine";
+                    window.location.href = "/result?index="+1;
                   }}
                 >
                   <p className="h2 button-text">냉장</p>
@@ -125,7 +125,7 @@ function CheckMine() {
                 <button
                   className="image-button"
                   onClick={() => {
-                    window.location.href = "/checkMine";
+                    window.location.href = "/result?index="+2;
                   }}
                 >
                   <p className="h2 button-text">냉동</p>

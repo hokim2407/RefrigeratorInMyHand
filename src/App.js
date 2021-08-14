@@ -4,6 +4,7 @@ import MainPage from "./mainPage";
 import SaveEnv from "./saveEnv";
 import CheckMine from "./checkMine";
 import FillPage from "./fillPage";
+import Result from "./result";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Route path="/saveEnv" component={SaveEnv} />
       <Route path="/checkMine" component={CheckMine} />
       <Route path="/fill" component={FillPage} />
+      <Route path="/result" component={Result} />
     </div>
   );
 }
