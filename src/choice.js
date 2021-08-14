@@ -1,16 +1,18 @@
 import React from "react";
 import "./App.css";
-import "./choice.css"
+import "./choice.css";
 
 function Choice() {
   return (
     <div className="top-block">
       <div className="background fill-background">
         <div className="dark-background vertical-flex-box ">
-          <p className="h2" style={{ paddingTop: "10vh", marginTop: "0" }}>
-            냉장고를 채워봅시다
-          </p>
-          <div>
+          <div className="item-flex-box">
+            <p className="h2" style={{ paddingTop: "10vh", marginTop: "0" }}>
+              당신의 냉장고는 어떤가요?
+            </p>
+          </div>
+          <div className="item-flex-box">
             <div
               className="icon-image"
               style={{
@@ -18,8 +20,7 @@ function Choice() {
                 left: "50%",
                 backgroundImage: 'url("./icon.png")',
               }}
-            >
-            </div>
+            ></div>
           </div>
           <div className="item-flex-box">
             <ul
@@ -32,10 +33,10 @@ function Choice() {
                   <button
                     className="green-button"
                     onClick={() => {
-                      window.location.href = "/choice";
+                      window.location.href = "/checkMine";
                     }}
                   >
-                    바코드
+                    확인하기
                   </button>
                 </div>
               </li>
@@ -48,7 +49,7 @@ function Choice() {
                       window.location.href = "/fill";
                     }}
                   >
-                    직접입력하기
+                    추가하기
                   </button>
                 </div>
               </li>
