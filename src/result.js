@@ -22,7 +22,7 @@ function Result() {
   if (checkType === 0)
     var Type = "상온";
   else if (checkType === 1)
-    var Type = "냉장";
+    Type = "냉장";
   else
     var Type = "냉동";
 
