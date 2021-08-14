@@ -14,16 +14,7 @@ function SaveEnv() {
               position: "relative",
             }}
           >
-            <div style={{ display: "flex" }}>
-              <img
-                style={{
-                  height: "min(10vw, 110px)",
-                  alignSelf: "center",
-                  justifyContent: "space-between",
-                }}
-                src={`./light-bulb.png`}
-                alt="아이콘"
-              ></img>
+            <div>
               <p className="h2">
                 환경과 냉장고 <br />
                 무슨 관련이 있을까요?
