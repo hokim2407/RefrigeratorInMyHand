@@ -24,7 +24,7 @@ function Result() {
   else if (checkType === 1)
     Type = "냉장";
   else
-    var Type = "냉동";
+    Type = "냉동";
 
   var existence = '있습니다';
   window.addEventListener("load", () => {
