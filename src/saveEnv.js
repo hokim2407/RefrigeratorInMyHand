@@ -45,7 +45,7 @@ function SaveEnv() {
             style={{ marginBottom: "3vh" }}
             className="green-button"
             onClick={() => {
-              window.location.href = "/choice";
+              window.location.href = "/checkMine";
             }}
           >
             NAXT
