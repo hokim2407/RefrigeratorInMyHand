@@ -2,6 +2,33 @@ import React from "react";
 import "./App.css";
 
 function CheckMine() {
+  var savedItem = window.localStorage.getItem("refrigerator");
+  savedItem = savedItem ? JSON.parse(savedItem) : {};
+  var status = [0, 0, 0];
+  var today = new Date();
+  for (var key in savedItem) {
+    var item = savedItem[key];
+    var lifeDate = new Date(item.date);
+    var dateDiff = Math.ceil(
+      (lifeDate.getTime() - today.getTime()) / (1000 * 3600 * 24)
+    );
+    var index;
+    if (item.type === "상온") index = 0;
+    else if (item.type === "냉장") index = 1;
+    else index = 2;
+
+    if (dateDiff > 7 || item.date === "") continue;
+    if (dateDiff >= 0 && status[index] === 0) status[index] = 1;
+    else if (dateDiff < 0) status[index] = 2;
+  }
+
+  var image = [0, 0, 0];
+  status.forEach((state, i) => {
+    if (state === 0) image[i] = "./icon/imo-good.png";
+    else if (state === 1) image[i] = "./icon/imo-imminent.png";
+    else image[i] = "./icon/imo-end.png";
+  });
+
   window.addEventListener("load", () => {
     const buttons = document.getElementsByClassName(" button-image");
     Array.from(buttons).forEach((btn) => {
@@ -32,10 +59,7 @@ function CheckMine() {
 
   return (
     <div className="top-block item-middle-box">
-      <div
-        className="white-box"
-        style={{ top: "0", height: "100%", padding: "0" }}
-      >
+      <div className="white-box" style={{ top: "0", padding: "0" }}>
         <div
           style={{
             position: "relative",
@@ -71,7 +95,7 @@ function CheckMine() {
                   <p className="h2 button-text">상온</p>
                   <img
                     className="button-icon"
-                    src="./icon/imo-good.png"
+                    src={`${image[0]}`}
                     alt="아이콘"
                   ></img>
                 </button>
@@ -101,7 +125,7 @@ function CheckMine() {
                   <p className="h2 button-text">냉장</p>
                   <img
                     className="button-icon"
-                    src="./icon/imo-good.png"
+                    src={`${image[1]}`}
                     alt="아이콘"
                   ></img>
                 </button>
@@ -131,7 +155,7 @@ function CheckMine() {
                   <p className="h2 button-text">냉동</p>
                   <img
                     className="button-icon"
-                    src="./icon/imo-good.png"
+                    src={`${image[2]}`}
                     alt="아이콘"
                   ></img>
                 </button>
