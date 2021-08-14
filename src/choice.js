@@ -4,21 +4,21 @@ import "./choice.css"
 
 function Choice() {
   return (
-<div className="top-block">
+    <div className="top-block">
       <div className="background fill-background">
         <div className="dark-background vertical-flex-box ">
           <p className="h2" style={{ paddingTop: "10vh", marginTop: "0" }}>
             냉장고를 채워봅시다
           </p>
           <div>
-          <div
-            className="icon-image"
-            style={{
-              margin: "5vh 0",
-              left: "50%",
-              backgroundImage: 'url("./icon.png")',
-            }}
-          >
+            <div
+              className="icon-image"
+              style={{
+                margin: "5vh 0",
+                left: "50%",
+                backgroundImage: 'url("./icon.png")',
+              }}
+            >
             </div>
           </div>
           <div className="item-flex-box">
@@ -36,7 +36,7 @@ function Choice() {
                     }}
                   >
                     바코드
-            </button>
+                  </button>
                 </div>
               </li>
 
@@ -49,7 +49,7 @@ function Choice() {
                     }}
                   >
                     직접입력하기
-            </button>
+                  </button>
                 </div>
               </li>
             </ul>
