@@ -251,10 +251,7 @@ div.margin-textbox {
 .button-image {
   display: inline-block;
   width: 80vw;
-  height: 20vh;
   max-width: 860px;
-  min-height: 12em;
-  background-image: url("./background/environmental-protection-blur.jpg");
   filter: none;
   border: none;
   outline: none;

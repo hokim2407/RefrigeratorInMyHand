@@ -7,21 +7,19 @@ function SaveEnv() {
   return (
     <div className="top-block">
       <div className="env-background background">
-        <div
-          className="dark-background item-middle-box"
-          style={{ justifyContent: "flex-end" }}
-        >
+        <div className="dark-background item-middle-box">
           <div
             style={{
               bottom: "7vh",
               position: "relative",
-              marginRight: "5%",
             }}
           >
-            <p className="h2">
-              환경과 냉장고 <br />
-              무슨 관련이 있을까요?
-            </p>
+            <div>
+              <p className="h2">
+                환경과 냉장고 <br />
+                무슨 관련이 있을까요?
+              </p>
+            </div>
           </div>
         </div>
         <div className="white-box">
