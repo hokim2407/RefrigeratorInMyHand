@@ -7,21 +7,28 @@ function SaveEnv() {
   return (
     <div className="top-block">
       <div className="env-background background">
-        <div
-          className="dark-background item-middle-box"
-          style={{ justifyContent: "flex-end" }}
-        >
+        <div className="dark-background item-middle-box">
           <div
             style={{
               bottom: "7vh",
               position: "relative",
-              marginRight: "5%",
             }}
           >
-            <p className="h2">
-              환경과 냉장고 <br />
-              무슨 관련이 있을까요?
-            </p>
+            <div style={{ display: "flex" }}>
+              <img
+                style={{
+                  height: "min(10vw, 110px)",
+                  alignSelf: "center",
+                  justifyContent: "space-between",
+                }}
+                src={`./light-bulb.png`}
+                alt="아이콘"
+              ></img>
+              <p className="h2">
+                환경과 냉장고 <br />
+                무슨 관련이 있을까요?
+              </p>
+            </div>
           </div>
         </div>
         <div className="white-box">
