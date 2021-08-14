@@ -1,6 +1,29 @@
 import React from "react";
 import "./fillPage.css";
 import addButtonEnterEvent from "./ButtonEnter";
+import shelflife from "./shelflife.json";
+
+function getCalculDate(name, type) {
+  try {
+    for (var key in shelflife) {
+      if (name.includes(key)) {
+        const itemShelfLife = shelflife[key][type];
+        if (itemShelfLife) {
+          const today = new Date();
+          today.setFullYear(today.getFullYear() + itemShelfLife[0]);
+          today.setMonth(today.getMonth() + itemShelfLife[1]);
+          today.setDate(today.getDate() + itemShelfLife[2]);
+          return today.toISOString().slice(0, 10);
+        }
+      }
+      //shelflifeArray.push(key);
+    }
+  } catch (e) {
+    console.log(e);
+    return "";
+  }
+  return "";
+}
 
 function FillPage() {
   var savedItem = window.localStorage.getItem("refrigerator");
@@ -17,11 +40,14 @@ function FillPage() {
       return;
     }
 
-    const date = document.getElementById("date").value;
+    var date = document.getElementById("date").value;
     const type = document.getElementById("type").value;
     document.getElementById("name").value = null;
     document.getElementById("date").value = null;
 
+    if (!date || date === "") {
+      date = getCalculDate(name, type);
+    }
     itemList.insertAdjacentHTML(
       "beforeend",
       `<li id="li-${keyCount}" class="list">
@@ -102,9 +128,9 @@ function FillPage() {
             </li>
             <li>
               <select id="type" name="type">
-                <option value="0">상온</option>
-                <option value="1">냉장</option>
-                <option value="2">냉동</option>
+                <option value="상온">상온</option>
+                <option value="냉장">냉장</option>
+                <option value="냉동">냉동</option>
               </select>
             </li>
           </ul>

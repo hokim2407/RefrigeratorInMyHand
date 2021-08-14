@@ -253,7 +253,7 @@ div.margin-textbox {
   width: 80vw;
   height: 20vh;
   max-width: 860px;
-  min-height: 120px;
+  min-height: 12em;
   background-image: url("./background/environmental-protection-blur.jpg");
   filter: none;
   border: none;
@@ -269,7 +269,7 @@ div.margin-textbox {
 }
 
 .button-icon {
-  height: 8vw;
+  height: min(8vw, 80px);
 }
 
 .white-box {
@@ -277,7 +277,7 @@ div.margin-textbox {
   background-color: white;
   width: 100%;
   overflow-wrap: normal;
-  min-height: 75vh;
+  min-height: 100vh;
   min-width: 280px;
   max-width: 1080px;
   top: 25vh;
