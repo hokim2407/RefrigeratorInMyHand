@@ -48,11 +48,20 @@ function FillPage() {
     if (!date || date === "") {
       date = getCalculDate(name, type);
     }
+    var imgSrc;
+    if (type === "상온") imgSrc = "./icon/sun.png";
+    else if (type === "냉장") imgSrc = "./icon/water.png";
+    else imgSrc = "./icon/ice.png";
+
     itemList.insertAdjacentHTML(
       "beforeend",
       `<li id="li-${keyCount}" class="list">
         <div class="list-text">${name}</div>
-        <div class="list-text">${date}</div>
+        <div class="list-text"><img 
+         class="life-icon"
+        src="${imgSrc}"
+        
+        alt="아이콘"></img>${date}</div>
       </li>`
     );
     itemList.lastChild.addEventListener("click", (e) => {
@@ -82,11 +91,19 @@ function FillPage() {
 
     for (const key in savedItem) {
       const item = savedItem[key];
+      var imgSrc;
+      if (item.type === "상온") imgSrc = "./icon/sun.png";
+      else if (item.type === "냉장") imgSrc = "./icon/water.png";
+      else imgSrc = "./icon/ice.png";
       itemList.insertAdjacentHTML(
         "beforeend",
         `<li id="li-${key}" class="list">
           <div class="list-text">${item.name}</div>
-          <div class="list-text">${item.date}</div>
+          <div class="list-text"><img 
+          class="life-icon"
+         src="${imgSrc}"
+         
+         alt="아이콘"></img>${item.date}</div>
         </li>`
       );
       itemList.lastChild.addEventListener("click", () => {

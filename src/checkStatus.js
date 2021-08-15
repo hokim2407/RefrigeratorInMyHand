@@ -159,9 +159,7 @@ function checkStatus() {
         );
 
         document.getElementById(`li-${key}`).addEventListener("click", (e) => {
-          var keyId;
-          if (!e.target.id) keyId = e.target.parentElement.id.split("-")[1];
-          else keyId = e.target.id.split("-")[1];
+          var keyId = e.target.id.split("-")[1];
           removeItem(keyId);
         });
       }
