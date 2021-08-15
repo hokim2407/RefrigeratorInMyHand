@@ -61,7 +61,7 @@ function CheckMine() {
     <div className="top-block item-middle-box">
       <div
         className="white-box"
-        style={{ top: "0", minHeight: "75vh", padding: "0" }}
+        style={{ top: "0", minHeight: "100vh", padding: "0" }}
       >
         <div
           style={{
