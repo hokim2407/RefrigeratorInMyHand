@@ -59,7 +59,10 @@ function CheckMine() {
 
   return (
     <div className="top-block item-middle-box">
-      <div className="white-box" style={{ top: "0", padding: "0" }}>
+      <div
+        className="white-box"
+        style={{ top: "0", minHeight: "100vh", padding: "0" }}
+      >
         <div
           style={{
             position: "relative",
@@ -89,7 +92,7 @@ function CheckMine() {
                 <button
                   className="image-button"
                   onClick={() => {
-                    window.location.href = "/result?index="+0;
+                    window.location.href = "/result?index=" + 0;
                   }}
                 >
                   <p className="h2 button-text">상온</p>
@@ -119,7 +122,7 @@ function CheckMine() {
                 <button
                   className="image-button"
                   onClick={() => {
-                    window.location.href = "/result?index="+1;
+                    window.location.href = "/result?index=" + 1;
                   }}
                 >
                   <p className="h2 button-text">냉장</p>
@@ -149,7 +152,7 @@ function CheckMine() {
                 <button
                   className="image-button"
                   onClick={() => {
-                    window.location.href = "/result?index="+2;
+                    window.location.href = "/result?index=" + 2;
                   }}
                 >
                   <p className="h2 button-text">냉동</p>
