@@ -42,6 +42,7 @@ li {
 .list-text {
   display: flex;
   justify-content: center;
+  pointer-events: none;
   align-items: center;
   font-family: "LotteMartDream";
   color: white;
