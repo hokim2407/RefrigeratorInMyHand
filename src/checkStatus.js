@@ -8,8 +8,20 @@ const removeItem = (key) => {
   }
   var target = document.getElementById(`li-${key}`);
   var targetParent = document.getElementById(`li-${key}`).parentElement;
-  if (window.confirm(`[${savedItem[key]?.name}] 제품을 드셨나요?`)) {
-    alert(`와우! 대단해요! 👏`);
+  var question;
+  var answer;
+  if (
+    !savedItem[key].date ||
+    targetParent.parentElement.parentElement.id.includes("2")
+  ) {
+    question = `[${savedItem[key]?.name}] 제품을 드셨나요?`;
+    answer = `와우! 대단해요! 👏`;
+  } else {
+    question = `[${savedItem[key]?.name}] 제품을 버리셨나요?`;
+    answer = `전기세를 아꼈어요! 👏`;
+  }
+  if (window.confirm(question)) {
+    alert(answer);
     delete savedItem[key];
     window.localStorage.setItem("refrigerator", JSON.stringify(savedItem));
     target?.remove();
@@ -23,7 +35,6 @@ const removeItem = (key) => {
     )
       document.getElementById(`item-block-0`).className = `life-block`;
   }
-  console.log(targetParent.childElementCount);
 };
 
 function addCheckBlock(imgSrc, preElemId, text, id) {
@@ -105,7 +116,6 @@ function checkStatus() {
   else if (checkType === 1) Type = "냉장";
   else Type = "냉동";
 
-  console.log(Type);
   window.addEventListener("load", () => {
     addCheckBlock(
       "./icon/imo-good.png",
@@ -135,7 +145,6 @@ function checkStatus() {
     var count_end = 0;
     for (const key in savedItem) {
       const item = savedItem[key];
-      console.log(Type);
       var index = 0;
       var lifeDate = new Date(item.date);
       var dateDiff = Math.ceil(
@@ -172,7 +181,6 @@ function checkStatus() {
       document.getElementById("item-block-1").className += " hide";
     }
     if (count_end + count_imm !== 0) {
-      console.log(document.getElementById("item-list-0"));
       document.getElementById("item-block-0").className += " hide";
     }
   });

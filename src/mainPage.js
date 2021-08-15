@@ -7,9 +7,11 @@ function getKeyword() {
   var savedItem = window.localStorage.getItem("refrigerator");
   savedItem = savedItem ? JSON.parse(savedItem) : {};
   const savedItemArray = [];
-
+  const today = new Date();
   for (var key in savedItem) {
-    savedItemArray.push(savedItem[key]);
+    if (!savedItem[key].date) continue;
+    if (today <= new Date(savedItem[key].date))
+      savedItemArray.push(savedItem[key]);
   }
   if (savedItemArray.length === 0) return "";
 
@@ -41,8 +43,6 @@ function MainPage() {
       responseType: "json",
     })
     .then((res) => {
-      console.log(res.data);
-
       if (!res.data.title) throw new Error("no data");
       if (document.readyState === "loading") {
         window.addEventListener("DOMContentLoaded", () =>
