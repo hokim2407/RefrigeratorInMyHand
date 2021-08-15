@@ -52,8 +52,17 @@ li.list {
   display: flex;
   margin: 0;
   margin-bottom: 10px;
-  height: min(10vw, 9rem);
+  height: min(8vw, 9rem);
   padding: 5px 50px;
   background-color: #00000075;
+  justify-content: space-between;
+}
+
+li.list-white {
+  display: flex;
+  margin: 0;
+  background: transparent;
+  height: min(5vw, 4rem);
+  padding: 5px 3rem;
   justify-content: space-between;
 }
