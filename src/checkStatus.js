@@ -8,7 +8,8 @@ const removeItem = (key) => {
   }
   var target = document.getElementById(`li-${key}`);
   var targetParent = document.getElementById(`li-${key}`).parentElement;
-  if (window.confirm(`[${savedItem[key]?.name}] 제품을 삭제하시겠습니까?`)) {
+  if (window.confirm(`[${savedItem[key]?.name}] 제품을 드셨나요?`)) {
+    alert(`와우! 대단해요! 👏`);
     delete savedItem[key];
     window.localStorage.setItem("refrigerator", JSON.stringify(savedItem));
     target?.remove();
