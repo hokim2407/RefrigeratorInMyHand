@@ -10,9 +10,11 @@ function Result() {
 
   var year = today.getFullYear();
   var month = ("0" + (today.getMonth() + 1)).slice(-2);
-  var day = ("0" + today.getDate() + 6).slice(-2);
+  var day = ("0" + today.getDate()).slice(-2);
+  var days = ("0" + today.getDate() + 6).slice(-2);
 
-  let imminentDate = year + "-" + month + "-" + day;
+  let imminentDate = year + "-" + month + "-" + days;
+  let endDate = year + "-" + month + "-" + day;
   console.log(imminentDate);
 
   var checkType = parseInt(
@@ -66,16 +68,29 @@ function Result() {
     for (const key in savedItem) {
       const item = savedItem[key];
       console.log(Type);
-      if (item.type === Type)
-        if (item.date < imminentDate) {
-          itemList.insertAdjacentHTML(
-            "beforeend",
-            `<li id="li-${key}" class="list-white"  >
-          <div class="list-text">&middot ${item.name}</div>
-          <div class="list-text">~${item.date}</div>
-        </li>`
-          );
-        }
+      if (item.type === Type){
+        if (image[checkType] === "./icon/imo-imminent.png")
+          if (item.date < imminentDate) {
+            itemList.insertAdjacentHTML(
+              "beforeend",
+              `<li id="li-${key}" class="list-white"  >
+            <div class="list-text">&middot ${item.name}</div>
+            <div class="list-text">~${item.date}</div>
+          </li>`
+            );
+          }
+          if (image[checkType] === "./icon/imo-end.png")
+          if (item.date < endDate) {
+            itemList.insertAdjacentHTML(
+              "beforeend",
+              `<li id="li-${key}" class="list-white"  >
+            <div class="list-text">&middot ${item.name}</div>
+            <div class="list-text">~${item.date}</div>
+          </li>
+          `
+            );
+          }
+      }
     }
   });
 
