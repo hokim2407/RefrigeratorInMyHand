@@ -10,7 +10,7 @@ function Result() {
 
   var year = today.getFullYear();
   var month = ("0" + (today.getMonth() + 1)).slice(-2);
-  var day = ("0" + today.getDate()).slice(-2);
+  var day = ("0" + (today.getDate()) + 6).slice(-2);
 
   let imminentDate = year + "-" + month + "-" + day;
   console.log(imminentDate);
@@ -42,11 +42,19 @@ function Result() {
   status.forEach((state, i) => {
     if (state === 0) {
       image[i] = "./icon/imo-good.png";
-    } else if (state === 1) image[i] = "./icon/imo-imminent.png";
+    } else if (state === 1) {
+      image[i] = "./icon/imo-imminent.png";
+    }
     else {
       image[i] = "./icon/imo-end.png";
+      existence = "유통기한이 지난 제품이 있습니다";
     }
-    if (image[checkType] === "./icon/imo-good.png") existence = "없습니다";
+    if (image[checkType] === "./icon/imo-good.png")
+      existence = "유통기한 임박 제품이 없습니다";
+    if (image[checkType] === "./icon/imo-imminent.png")
+      existence = "유통기한 임박 제품이 있습니다"
+    if (image[checkType] === "./icon/imo-end.png")
+      existence = "유통기한이 지난 제품이 있습니다";
   });
 
   if (checkType === 0) var Type = "상온";
@@ -60,7 +68,7 @@ function Result() {
       const item = savedItem[key];
       console.log(Type);
       if (item.type === Type)
-        if (item.date < imminentDate) {
+        if ((item.date < imminentDate)) {
           itemList.insertAdjacentHTML(
             "beforeend",
             `<li id="li-${key}" class="list">
@@ -90,12 +98,9 @@ function Result() {
   return (
     <div className="top-block">
       <div className="background fill-background">
-        <div className="dark-background vertical-flex-box ">
-          <div
-            className="transparent-box"
-            style={{ top: "0", height: "100%", padding: "0" }}
-          >
-            <div
+        <div className="dark-background vertical-flex-box "
+          style={{justifyContent: "normal",}}>
+        <div
               style={{
                 position: "relative",
                 align: "left",
@@ -120,28 +125,42 @@ function Result() {
                 backgroundColor: "rgba(255, 255, 255, 0.3)",
               }}
             >
-              <div style={{}}>
-                <p
-                  id="answer"
-                  className="h2 button-text"
+              <div>
+                <div
                   style={{
-                    margin: "0",
-                    fontSize: "min(5vw, 4rem)",
-                    paddingBlockStart: "3vw",
-                    color: "white",
-                    textDecoration: "underline",
-                    textUnderlinePosition: "under",
-                  }}
-                >
+                    paddingTop: "1rem",
+                    marginLeft: "1rem",
+                    position: "relative"
+                  }}>
                   <img
                     className="button-icon"
                     src={`${image[checkType]}`}
+                    style={{
+                      float: "left",
+                      marginRight: "2vw",
+                      minHeight:"13px"
+                    }}
                     alt="아이콘"
                   ></img>
-                  유통기한 임박 제품이 {existence}
-                </p>
+                  <p
+                    id="answer"
+                    className="h2 button-text"
+                    style={{
+                      color: "white",
+                      align: "middle",
+                      textDecoration: "underline",
+                      textUnderlinePosition: "under",
+                    }}
+                  >
+                    {existence}
+                  </p>
+                </div>
                 <ul>
-                  <li>
+                  <li
+                    style={{
+                      marginTop: "1rem"
+                    }}
+                  >
                     <ul id="item-list" style={{ marginBlockEnd: "0" }}></ul>
                   </li>
                 </ul>
@@ -153,7 +172,6 @@ function Result() {
                 style={{ padding: "3vh 0 ", marginBottom: "0" }}
               ></ul>
             </div>
-          </div>
         </div>
       </div>
     </div>
