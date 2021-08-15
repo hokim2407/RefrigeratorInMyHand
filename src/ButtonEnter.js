@@ -4,7 +4,6 @@ function addButtonEnterEvent() {
     Array.from(buttons).forEach((btn) => {
       btn.addEventListener("mouseenter", () => {
         btn.className = `${btn.className.toString()} button-click`;
-        console.log("enter");
       });
 
       btn.addEventListener("mouseleave", () => {
