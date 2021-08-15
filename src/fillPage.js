@@ -69,13 +69,11 @@ function FillPage() {
     });
     savedItem[keyCount++] = { name, date, type };
     window.localStorage.setItem("refrigerator", JSON.stringify(savedItem));
-    document.getElementById("name").focus();
   };
 
   const removeItem = (key) => {
     if (!savedItem[key]) {
       console.error(`${key} is not exist`);
-      document.getElementById("name").focus();
       return;
     }
     if (window.confirm(`[${savedItem[key]?.name}] 제품을 삭제하시겠습니까?`)) {
