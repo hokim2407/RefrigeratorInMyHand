@@ -1,3 +1,30 @@
+var savedItem = window.localStorage.getItem("refrigerator");
+savedItem = savedItem ? JSON.parse(savedItem) : {};
+
+const removeItem = (key) => {
+  if (!savedItem[key]) {
+    console.error(`${key} is not exist`);
+    return;
+  }
+  var target = document.getElementById(`li-${key}`);
+  var targetParent = document.getElementById(`li-${key}`).parentElement;
+  if (window.confirm(`[${savedItem[key]?.name}] 제품을 삭제하시겠습니까?`)) {
+    delete savedItem[key];
+    window.localStorage.setItem("refrigerator", JSON.stringify(savedItem));
+    target?.remove();
+  }
+
+  if (targetParent.childElementCount === 0) {
+    targetParent.parentElement.parentElement.className += " hide";
+    if (
+      document.getElementById(`item-list-1`).childElementCount === 0 &&
+      document.getElementById(`item-list-2`).childElementCount === 0
+    )
+      document.getElementById(`item-block-0`).className = `life-block`;
+  }
+  console.log(targetParent.childElementCount);
+};
+
 function addCheckBlock(imgSrc, preElemId, text, id) {
   document.getElementById(preElemId).insertAdjacentHTML(
     "afterend",
@@ -38,15 +65,8 @@ function addCheckBlock(imgSrc, preElemId, text, id) {
             ${text}
           </p>
         </div>
-        <ul>
-          <li
-            style="
-              margin-top: 1rem
-            "
-          >
             <ul id="item-list-${id}" style=" marginBlockEnd: 0 "></ul>
-          </li>
-        </ul>
+       
       </div>
     </div>`
   );
@@ -136,6 +156,13 @@ function checkStatus() {
           <div class="list-text">~${item.date}</div>
           </li>`
         );
+
+        document.getElementById(`li-${key}`).addEventListener("click", (e) => {
+          var keyId;
+          if (!e.target.id) keyId = e.target.parentElement.id.split("-")[1];
+          else keyId = e.target.id.split("-")[1];
+          removeItem(keyId);
+        });
       }
     }
 

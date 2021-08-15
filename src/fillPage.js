@@ -35,7 +35,7 @@ function FillPage() {
   const addItem = () => {
     const name = document.getElementById("name").value;
     if (!name) {
-      alert("식품 이름을 입력해주세요");
+      alert("제품 이름을 입력해주세요");
 
       return;
     }
@@ -69,7 +69,7 @@ function FillPage() {
       document.getElementById("name").focus();
       return;
     }
-    if (window.confirm(`[${savedItem[key]?.name}] 식품을 삭제하시겠습니까?`)) {
+    if (window.confirm(`[${savedItem[key]?.name}] 제품을 삭제하시겠습니까?`)) {
       delete savedItem[key];
       window.localStorage.setItem("refrigerator", JSON.stringify(savedItem));
       document.getElementById(`li-${key}`)?.remove();
@@ -110,7 +110,7 @@ function FillPage() {
                 id="name"
                 type="text"
                 required
-                placeholder="식품명을 입력해주세요"
+                placeholder="제품명을 입력해주세요"
               />
             </li>
             <li>
