@@ -57,23 +57,16 @@ localhost:3000
 
 ## 배포방법
 
-1. 본인의 레포지토리에 새로운 저장소를 만들어주세요. 빈 저장소의 주소가 필요합니다.
-
-2. 이 저장소를 클론받아서 빈 저장소에 푸시합니다.
+1. 이 저장소를 클론받아서 해당 폴더를 루트로 vscode를 엽니다.
 ```
 git clone https://github.com/hokim2407/RefrigeratorInMyHand.git
-cd RefrigeratorInMyHand
-git remote remove origin
-git remote add  origin https://github.com/hokim2407/<새 저장소 주소>.git
-git add *
-git push origin main  
 ```
-3. [Azure 정적 웹앱 만들기](https://docs.microsoft.com/ko-kr/learn/modules/publish-app-service-static-web-app-api/4-exercise-static-web-apps?pivots=react)의 과정을 따라주세요.
+2. [Azure 정적 웹앱 만들기](https://docs.microsoft.com/ko-kr/learn/modules/publish-app-service-static-web-app-api/4-exercise-static-web-apps?pivots=react)의 과정을 따라주세요.
 - vscode에서 Azure Static Web Apps 확장을 설치합니다.
-- `F1`를 눌러 명령팔레트를 열고 `Azure: login`으로 Azure에 로그인합니다. (포탈에 이미 구독이 만들어져 있어야합니다. 만들지 않았다면 만들어주세요.)
+- `F1`를 눌러 명령팔레트를 열고 `Azure: Sign in`으로 Azure에 로그인합니다. (포탈에 이미 구독이 만들어져 있어야합니다. 만들지 않았다면 만들어주세요.)
 - 다시 명령 팔레트를 열고 `Azure: Select Subscriptions`를 눌러 구독을 선택합니다.
 - Visual Studio Code 내의 활동 표시줄에서 Azure 로고를 선택하여 Azure 확장 창을 엽니다.
 - Static Web Apps 레이블 위에 마우스를 놓고 +(더하기 기호)를 선택합니다.
-- 필요한 정보를 입력합니다. 애플리케이션 코드의 위치는 루트이므로 '/'를 입력합니다.
-- 전부 입력한 후에 엔터를 누르면 앱이 만들어집니다.
+- 필요한 정보를 입력합니다. 현재 위치가 클론받은 폴더 바로 아래인지 다시 한번 확인해주세요. 내용이 채워져있지 않은 부분만 넣고 나머지는 엔터만 눌러도 무방합니다.
+- 전부 입력한 후에 엔터를 누르면 앱이 만들어지기 시작합니다. 본인 레포지토리의 깃허브 액션에서 실행 상태를 확인할 수 있습니다.
 - Static Web Apps 확장에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 Browse Site를 누르면 페이지로 이동 할 수 있습니다.
