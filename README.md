@@ -39,7 +39,7 @@
 git clone https://github.com/hokim2407/RefrigeratorInMyHand.git
 ```
 
-2. 필요한 모듈을 설치해주세요
+2. 필요한 모듈을 설치해주세요. <br/>
 컴퓨터에 node.js가 반드시 깔려있어야 합니다.
 ```
 npm install
