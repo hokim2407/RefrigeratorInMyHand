@@ -274,7 +274,7 @@ div.margin-textbox {
   background-color: white;
   width: 100%;
   overflow-wrap: normal;
-  min-height: 100vh;
+  min-height: 75vh;
   min-width: 280px;
   max-width: 1080px;
   top: 25vh;

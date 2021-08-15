@@ -15,8 +15,8 @@ function Result() {
   let imminentDate = year + "-" + month + "-" + day;
   console.log(imminentDate);
 
-  var checkType = window.location.href.substr(
-    window.location.href.lastIndexOf("=") + 1
+  var checkType = parseInt(
+    window.location.href.substr(window.location.href.lastIndexOf("=") + 1)
   );
 
   var status = [0, 0, 0];
