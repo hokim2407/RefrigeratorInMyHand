@@ -92,6 +92,9 @@ li {
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.hide {
+  display: none;
+}
 
 .App-link {
   color: #61dafb;
@@ -297,4 +300,11 @@ div.margin-textbox {
   display: flex;
   justify-content: space-between;
   min-height: 100vh;
+}
+
+.life-block {
+  text-align: left;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 1vh;
 }
